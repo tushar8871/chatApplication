@@ -12,11 +12,11 @@ pip3 install django bcrypt django-extensions
 pip3 install gunicorn
 cd fundoo/
 python manage.py collectstatic
-sudo cp /chatApplication/Dependency_Scripts/gunicorn.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl start gunicorn
-sudo systemctl enable gunicorn
-sudo unlink /etc/nginx/sites-enabled/*
-sudo cp /chatApplication/Dependency_Scripts/fundoo /etc/nginx/sites-available/
-sudo ln -s /etc/nginx/sites-available/fundoo /etc/nginx/sites-enabled
-sudo service restart nginx
+cp /chatApplication/Dependency_Scripts/gunicorn.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl start gunicorn
+systemctl enable gunicorn
+unlink /etc/nginx/sites-enabled/*
+cp /chatApplication/Dependency_Scripts/fundoo /etc/nginx/sites-available/
+ln -s /etc/nginx/sites-available/fundoo /etc/nginx/sites-enabled
+service restart nginx

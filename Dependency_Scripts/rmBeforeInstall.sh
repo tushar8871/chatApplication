@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo rm -rf /chatApplication/
+rm -rf /chatApplication/
