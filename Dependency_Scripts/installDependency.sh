@@ -13,7 +13,7 @@ pip3 install gunicorn
 cd fundoo/
 python3 manage.py collectstatic
 #gunicorn commands
-gunicorn --bind 0.0.0.0:8000 fundoo.wsgi:application
+#gunicorn --bind 0.0.0.0:8000 fundoo.wsgi:application
 sudo cp /home/ubuntu/chatApplication/Dependency_Scripts/gunicorn.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl start gunicorn
