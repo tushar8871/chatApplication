@@ -2,16 +2,16 @@
 sudo apt-get update
 sudo apt-get install python3-pip python3-dev nginx git -y
 sudo apt-get update
-pip3 install virtualenv
 cd /chatApplication
-virtualenv --python=python3 venv
+pip3 install virtualenv
+virtualenv venv
 source /chatApplication/venv/bin/activate
-cd /ChatApplication/
 pip3 install -r requirements.txt
 pip3 install django bcrypt django-extensions
 pip3 install gunicorn
 cd fundoo/
 python3 manage.py collectstatic
+cd ..
 sudo cp /chatApplication/Dependency_Scripts/gunicorn.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl start gunicorn
