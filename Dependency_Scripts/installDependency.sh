@@ -10,7 +10,7 @@ cd /home/ubuntu/ChatApplication/
 pip3 install -r requirements.txt
 pip3 install django bcrypt django-extensions
 pip3 install gunicorn
-cd /fundoo/
+cd fundoo/
 python3 manage.py collectstatic
 #gunicorn commands
 gunicorn --bind 0.0.0.0:8000 fundoo.wsgi:application
