@@ -18,4 +18,4 @@ sudo systemctl enable gunicorn
 sudo unlink /etc/nginx/sites-enabled/*
 sudo cp /chatApplication/Dependency_Scripts/fundoo /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/fundoo /etc/nginx/sites-enabled
-service restart nginx
+sudo systemctl restart nginx
