@@ -11,8 +11,8 @@ pip3 install django bcrypt django-extensions
 pip3 install gunicorn
 cd fundoo/
 python3 manage.py collectstatic
-cd ..
 sudo cp /chatApplication/Dependency_Scripts/gunicorn.service /etc/systemd/system/
+sudo apt-get update
 sudo systemctl daemon-reload
 sudo systemctl start gunicorn
 sudo systemctl enable gunicorn
