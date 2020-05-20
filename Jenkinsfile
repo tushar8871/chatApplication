@@ -5,7 +5,7 @@ pipeline {
            steps {
              sh ''' #! /bin/bash 
              
-             aws deploy create-deployment --application-name jenkinApp --deployment-group-name jenkindeploy --deployment-config-name CodeDeployDefault.AllAtOnce --github-location repository=https://github.com/tushar8871/chatApplication,commitId=${GIT_COMMIT}
+             aws deploy create-deployment --application-name jenkinApp --deployment-group-name jenkindeploy --deployment-config-name CodeDeployDefault.AllAtOnce --github-location repository=tushar8871/chatApplication,commitId=${GIT_COMMIT}
              '''
             }
         }
