@@ -1,6 +1,20 @@
 pipeline {
     agent any
      stages {
+     stage('Sonarqube') {
+           enviornment {
+             scannerHome  = tool 'sonarScanner'
+           }
+           steps {
+             withSonarQubeEnv('sonarqube') {
+               sh "${scannerHome}/bin/sonarScanner"
+             }
+             timeout(time: 5, unit: 'MINUTES') {
+               waitForQualityGate abortPipeline: true
+             }
+           }
+           
+     }  
      stage('Deploy') { 
            steps {
              sh ''' #! /bin/bash 
@@ -13,5 +27,9 @@ pipeline {
         
     }
     
-    
+    post {
+      always {
+        echo "Stages are executed successfully"   
+      }
+    }
 }
