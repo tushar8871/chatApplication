@@ -3,11 +3,8 @@ pipeline {
 	stages {
 		stage('Sonarqube') {
 			steps {
-				enviornment {
-					scannerHome  = tool 'sonarScanner'
-				}
 				withSonarQubeEnv('sonarqube') {
-					sh "${scannerHome}/bin/sonarScanner"
+					sh "sonarScanner/bin/sonar-scanner"
 				}
 				timeout(time: 5, unit: 'MINUTES') {
 					waitForQualityGate abortPipeline: true
