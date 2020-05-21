@@ -7,7 +7,7 @@ pipeline {
                 scannerHome = tool 'sonarScanner'
                 }
          steps {
-            withSonarQubeEnv('sonarScanner') {
+            withSonarQubeEnv('sonar') {
                 sh "${scannerHome}/bin/sonar-scanner"
             }
             timeout(time: 5, unit: 'MINUTES') {
